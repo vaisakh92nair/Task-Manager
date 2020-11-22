@@ -28,6 +28,7 @@
 .task-list-container {
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
     border-top-right-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
     padding: 2.5rem;
@@ -62,4 +63,30 @@
         }
     }
 
+}
+
+.task {
+    background: white;
+    padding: 1rem 1.25rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+
+    &:not(.complete){
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.95);
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 5px #eeeeee;
+        }
+    }
+    
+
+    &.complete {
+        text-decoration: line-through;
+        opacity: 60%;
+    }
 }
